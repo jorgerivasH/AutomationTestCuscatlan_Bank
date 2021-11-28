@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AutomationTestSuite" verbose="1">
+    <test name="TC01 - Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="dexpokemon.TestPokemonApp">
+                <methods>
+                    <include name="newTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
