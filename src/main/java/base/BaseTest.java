@@ -40,7 +40,6 @@ public class BaseTest {
 
     @AfterMethod
     public void closeApplication(){
-        driver.quit();
         log.info("close driver");
         driver.quit();
     }

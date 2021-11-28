@@ -2,7 +2,9 @@ package actions;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import pageObjects.BasePageObject;
+import pageObjects.PokedexPageSection;
 
 public class SearchPokemon extends BasePageObject {
     public SearchPokemon(WebDriver driver, Logger log) {
@@ -10,8 +12,11 @@ public class SearchPokemon extends BasePageObject {
     }
 
     public void execute(){
-        driver.get("https://dex.pokemonshowdown.com/");
-        log.info("Starting the test");
+        PokedexPageSection pokedexPageSection = new PokedexPageSection(driver,log);
+        pokedexPageSection.searchPokemon("pikachu");
+        Assert.assertTrue(pokedexPageSection.firstPokemon());
+        log.info("Pokemon was found");
+
     }
 
 }
