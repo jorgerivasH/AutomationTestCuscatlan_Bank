@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
+import java.util.Collections;
+import java.util.List;
+
 public class PokedexPageSection extends BasePageObject{
     By searchButtonLocator = By.xpath("//button[contains(text(),'Search')]");
     By pokemonButtonLocator = By.xpath("//button[contains(text(),'Pokémon')]");
@@ -13,6 +16,7 @@ public class PokedexPageSection extends BasePageObject{
     By searchTextBoxLocator = By.xpath("//body/div[2]/div[1]/form[1]/div[1]/input[1]");
     By firstPokemonLocator = By.xpath("//body[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[3]/b[1]");
     By firstAttackLocator = By.xpath("//body[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]/b[1]");
+    By firstAbilityLocator = By.xpath("//b[contains(text(),'Protean')]");
     By ppLocator = By.xpath("//body/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[5]");
 
 
@@ -23,6 +27,11 @@ public class PokedexPageSection extends BasePageObject{
     public void searchPokemon(String name){
         click(searchTextBoxLocator);
         type(name,searchTextBoxLocator);
+    }
+
+    public void searchPokemonAbility(String ability){
+        click(pokemonButtonLocator);
+        type(ability,searchTextBoxLocator);
     }
 
     public boolean firstPokemon(String pokemonName){
@@ -76,5 +85,28 @@ public class PokedexPageSection extends BasePageObject{
             log.info("No pp was found");
         }
         return ppStatus;
+    }
+
+    public boolean firstPokemonAbility(String pokemonAbility){
+        boolean pokemonA = false;
+        log.info("The name found is: "+ getText(firstAbilityLocator));
+        if (getText(firstAbilityLocator).contains(pokemonAbility))
+        {
+            pokemonA = true;
+            log.info("The pokemon Ability was found");
+        }
+        else {
+            log.info("No exact match found");
+        }
+        return pokemonA;
+    }
+
+    public void listPokemon(){
+
+        for (int i = 5; i<=8; i++){
+            String allElements = (find(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/ul[1]/li[" + i + "]/a[1]/span[3]")).getText());
+            log.info("The pokemon is: " + allElements);
+        }
+
     }
 }
