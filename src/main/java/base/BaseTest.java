@@ -3,6 +3,7 @@ package base;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +12,8 @@ import org.testng.annotations.Parameters;
 import pageObjects.BasePageObject;
 
 import java.lang.reflect.Method;
+
+import static java.lang.Thread.sleep;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -39,7 +42,8 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void closeApplication(){
+    public void closeApplication() throws InterruptedException {
+        sleep(5000);
         log.info("close driver");
         driver.quit();
     }
