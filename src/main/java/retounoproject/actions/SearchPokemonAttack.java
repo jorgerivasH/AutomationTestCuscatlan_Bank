@@ -1,11 +1,11 @@
-package actions;
+package retounoproject.actions;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-import pageObjects.BasePageObject;
-import pageObjects.PokedexPageSection;
+import retounoproject.pageObjects.BasePageObject;
+import retounoproject.pageObjects.PokedexPageSection;
 
 public class SearchPokemonAttack extends BasePageObject {
     public SearchPokemonAttack(WebDriver driver, Logger log) {

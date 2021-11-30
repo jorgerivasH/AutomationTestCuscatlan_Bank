@@ -1,14 +1,14 @@
-package dexpokemon;
+package retounodexpokemon;
 
-import actions.SearchPokemon;
-import actions.SearchPokemonAbility;
-import actions.SearchPokemonAttack;
-import base.TestUtilities;
+import retounoproject.actions.SearchPokemon;
+import retounoproject.actions.SearchPokemonAbility;
+import retounoproject.actions.SearchPokemonAttack;
+import retounoproject.base.TestUtilities;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-public class TestPokemonApp extends TestUtilities {
+public class PokemonWebAppTest extends TestUtilities {
 
     @Test
     @Parameters("pokemon")

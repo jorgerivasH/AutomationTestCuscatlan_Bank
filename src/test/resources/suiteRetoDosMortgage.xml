@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AutomationTestSuite" verbose="1">
+    <test name="TC01 - Test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://www.rocketmortgage.com/calculators/mortgage-calculator?qlsource=RMTextLink"/>
+        <classes>
+            <class name="retodosMortgageCalculator.MortgageTest">
+                <methods>
+                    <include name="calculateMortgageTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

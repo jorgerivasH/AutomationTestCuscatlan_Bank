@@ -5,7 +5,7 @@
         <parameter name="pokemon" value="Pikachu"/>
         <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
         <classes>
-            <class name="dexpokemon.TestPokemonApp">
+            <class name="retounodexpokemon.PokemonWebAppTest">
                 <methods>
                     <include name="SearchPokemonTest"/>
                 </methods>
@@ -17,7 +17,7 @@
         <parameter name="attack" value="Absorb"/>
         <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
         <classes>
-            <class name="dexpokemon.TestPokemonApp">
+            <class name="retounodexpokemon.PokemonWebAppTest">
                 <methods>
                     <include name="SearchPokemonAttackTest"/>
                 </methods>
@@ -29,7 +29,7 @@
         <parameter name="ability" value="Protean"/>
         <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
         <classes>
-            <class name="dexpokemon.TestPokemonApp">
+            <class name="retounodexpokemon.PokemonWebAppTest">
                 <methods>
                     <include name="SearchPokemonAbilityTest"/>
                 </methods>

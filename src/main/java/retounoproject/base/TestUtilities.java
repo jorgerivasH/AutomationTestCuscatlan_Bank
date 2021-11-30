@@ -1,8 +1,8 @@
-package base;
+package retounoproject.base;
 
 import org.openqa.selenium.JavascriptExecutor;
 
-public class TestUtilities extends BaseTest {
+public class TestUtilities extends BaseTest{
     //Here methods used for common actions
     //This method sleeps the browser
     public void sleep(long millis){

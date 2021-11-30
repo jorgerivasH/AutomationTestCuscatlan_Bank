@@ -1,4 +1,4 @@
-package base;
+package retodosproject.base;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import pageObjects.BasePageObject;
+import retounoproject.pageObjects.BasePageObject;
 
 import java.lang.reflect.Method;
 

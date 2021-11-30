@@ -1,4 +1,4 @@
-package pageObjects;
+package retounoproject.pageObjects;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
