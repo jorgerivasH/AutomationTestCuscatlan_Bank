@@ -40,7 +40,7 @@ public class BasePageObject {
 
     //Click on element with given locator when is visible
     public void click(By locator){
-        waitForVisibilityOf(locator, 5);
+        waitForVisibilityOf(locator, 9);
         find(locator).click();
     }
 

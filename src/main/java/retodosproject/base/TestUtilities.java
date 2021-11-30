@@ -23,7 +23,7 @@ public class TestUtilities extends BaseTest {
     //This method scroll on the page
     public void scroll(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,750)", "");
+        js.executeScript("window.scrollBy(0,750)");
         log.info("Scroll down was performed");
     }
 }

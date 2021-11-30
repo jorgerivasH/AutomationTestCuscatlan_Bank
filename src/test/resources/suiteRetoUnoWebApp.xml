@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="AutomationTestSuite" verbose="1">
-    <test name="TC01 - Test">
+    <test name="TC01 - Verify the search for a pokemon in the pokedex page ">
         <parameter name="browser" value="chrome"/>
         <parameter name="pokemon" value="Pikachu"/>
         <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
@@ -12,7 +12,7 @@
             </class>
         </classes>
     </test>
-    <test name="TC02 - Test">
+    <test name="TC02 - Verify the search for a pokemon attack in the pokedex page">
         <parameter name="browser" value="chrome"/>
         <parameter name="attack" value="Absorb"/>
         <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
@@ -24,7 +24,7 @@
             </class>
         </classes>
     </test>
-    <test name="TC03 - Test">
+    <test name="TC03 - Verify the search for a pokemon ability">
         <parameter name="browser" value="chrome"/>
         <parameter name="ability" value="Protean"/>
         <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
