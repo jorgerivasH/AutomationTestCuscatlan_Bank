@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-/* This Class contain common method that we are going to use in pages object*/
+/** This Class contains common methods that we are going to use in pages object*/
 public class BasePageObject {
 
     protected WebDriver driver;

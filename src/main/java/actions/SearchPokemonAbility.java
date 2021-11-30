@@ -2,7 +2,6 @@ package actions;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import pageObjects.BasePageObject;
 import pageObjects.PokedexPageSection;
@@ -12,13 +11,13 @@ public class SearchPokemonAbility extends BasePageObject {
         super(driver, log);
     }
 
-    public void execute(){
+    public void execute(String ability){
         PokedexPageSection pokedexPageSection = new PokedexPageSection(driver,log);
         log.info("Finding Ability ...");
-        pokedexPageSection.searchPokemonAbility("Protean");
+        pokedexPageSection.searchPokemonAbility(ability);
         //Verifying the search
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(pokedexPageSection.firstPokemonAbility("Protean"));
+        softAssert.assertTrue(pokedexPageSection.firstPokemonAbility(ability));
         pokedexPageSection.listPokemon();
         log.info("Search was performed");
     }

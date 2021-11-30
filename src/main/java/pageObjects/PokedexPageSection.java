@@ -4,13 +4,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
-
-import java.util.Collections;
-import java.util.List;
 
 public class PokedexPageSection extends BasePageObject{
-    By searchButtonLocator = By.xpath("//button[contains(text(),'Search')]");
+    // Declare Locators in the pokedex page section
     By pokemonButtonLocator = By.xpath("//button[contains(text(),'Pokémon')]");
     By movesButtonLocator = By.xpath("//button[contains(text(),'Moves')]");
     By searchTextBoxLocator = By.xpath("//body/div[2]/div[1]/form[1]/div[1]/input[1]");
@@ -24,16 +20,19 @@ public class PokedexPageSection extends BasePageObject{
         super(driver, log);
     }
 
+    // This method search an specific pokemon
     public void searchPokemon(String name){
         click(searchTextBoxLocator);
         type(name,searchTextBoxLocator);
     }
 
+    // This method search an specific pokemon ability
     public void searchPokemonAbility(String ability){
         click(pokemonButtonLocator);
         type(ability,searchTextBoxLocator);
     }
 
+    // This method gets the first pokemon in the search page
     public boolean firstPokemon(String pokemonName){
         boolean pokemon = false;
         log.info("The name found is: "+ getText(firstPokemonLocator));
@@ -53,11 +52,13 @@ public class PokedexPageSection extends BasePageObject{
         return moveBtn;
     }
 
-    public void searchPokemonAttack(String name){
+    // This method search an specific pokemon attack
+    public void searchPokemonAttack(String attack){
         click(searchTextBoxLocator);
-        type(name,searchTextBoxLocator);
+        type(attack,searchTextBoxLocator);
     }
 
+    // This method gets the first pokemon attack in the search page
     public boolean firstPokemonAttack(String pokemonAttack){
         boolean pokemon = false;
         log.info("The name found is: "+ getText(firstAttackLocator));
@@ -72,6 +73,7 @@ public class PokedexPageSection extends BasePageObject{
         return pokemon;
     }
 
+    // This method search the pp for a pokemon
     public boolean getPp(){
         boolean ppStatus = false;
 
@@ -87,6 +89,7 @@ public class PokedexPageSection extends BasePageObject{
         return ppStatus;
     }
 
+    //This method gets the first pokemon ability
     public boolean firstPokemonAbility(String pokemonAbility){
         boolean pokemonA = false;
         log.info("The name found is: "+ getText(firstAbilityLocator));
@@ -101,12 +104,11 @@ public class PokedexPageSection extends BasePageObject{
         return pokemonA;
     }
 
+    //This method gets the list of the pokemon shown by ability
     public void listPokemon(){
-
-        for (int i = 5; i<=8; i++){
-            String allElements = (find(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/ul[1]/li[" + i + "]/a[1]/span[3]")).getText());
-            log.info("The pokemon is: " + allElements);
+        for (int i = 4; i<=7; i++){
+            String pokemonList = getText(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/ul[1]/li[" + i + "]/a[1]/span[3]"));
+            log.info("The pokemon is: " + pokemonList);
         }
-
     }
 }

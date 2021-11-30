@@ -12,14 +12,14 @@ public class SearchPokemonAttack extends BasePageObject {
         super(driver, log);
     }
 
-    public void execute(){
+    public void execute(String attack){
         PokedexPageSection pokedexPageSection = new PokedexPageSection(driver,log);
         log.info("Finding attack ...");
         pokedexPageSection.moveButton().click();
-        pokedexPageSection.searchPokemonAttack("Absorb");
+        pokedexPageSection.searchPokemonAttack(attack);
         //Verifying the attach
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(pokedexPageSection.firstPokemonAttack("Absorb"));
+        softAssert.assertTrue(pokedexPageSection.firstPokemonAttack(attack));
         Assert.assertTrue(pokedexPageSection.getPp());
         log.info("Search attack was performed");
     }

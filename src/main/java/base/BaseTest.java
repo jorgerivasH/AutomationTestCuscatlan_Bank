@@ -3,7 +3,6 @@ package base;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -22,9 +21,9 @@ public class BaseTest {
     protected  String testName;
     protected  String testMethodName;
 
-    @Parameters({ "browser" })
+    @Parameters({ "browser","url" })
     @BeforeMethod(alwaysRun = true)
-    public void setupApplication(Method method, @Optional("chrome") String browser, ITestContext ctx){
+    public void setupApplication(Method method, @Optional("chrome") String browser, ITestContext ctx, String url){
         String testName = ctx.getCurrentXmlTest().getName();
         log = LogManager.getLogger(testName);
         //Here the browser is passed to BrowserDriverFactor class
@@ -33,7 +32,7 @@ public class BaseTest {
         driver = factory.createDriver();
         driver.manage().window().maximize();
         BasePageObject base=new BasePageObject(driver,log);
-        base.openUrl("https://dex.pokemonshowdown.com/");
+        base.openUrl(url);
 
         //This information will be used to set more information in the log message
         this.testSuiteName = ctx.getSuite().getName();

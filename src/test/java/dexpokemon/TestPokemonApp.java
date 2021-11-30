@@ -4,28 +4,30 @@ import actions.SearchPokemon;
 import actions.SearchPokemonAbility;
 import actions.SearchPokemonAttack;
 import base.TestUtilities;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
 public class TestPokemonApp extends TestUtilities {
 
     @Test
-    public void SearchPokemonTest(){
+    @Parameters("pokemon")
+    public void SearchPokemonTest(String pokemon){
         SearchPokemon searchPokemon = new SearchPokemon(driver,log);
-        searchPokemon.execute();
+        searchPokemon.execute(pokemon);
     }
 
     @Test
-    public void SearchPokemonAttackTest(){
+    @Parameters("attack")
+    public void SearchPokemonAttackTest(String attack){
         SearchPokemonAttack searchPokemonAttack = new SearchPokemonAttack(driver,log);
-        searchPokemonAttack.execute();
+        searchPokemonAttack.execute(attack);
     }
 
     @Test
-    public void SearchPokemonAbilityTest(){
+    @Parameters("ability")
+    public void SearchPokemonAbilityTest(String ability){
         SearchPokemonAbility searchPokemonAbility = new SearchPokemonAbility(driver,log);
-        searchPokemonAbility.execute();
+        searchPokemonAbility.execute(ability);
     }
-
-
 }

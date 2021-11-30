@@ -2,10 +2,36 @@
 <suite name="AutomationTestSuite" verbose="1">
     <test name="TC01 - Test">
         <parameter name="browser" value="chrome"/>
+        <parameter name="pokemon" value="Pikachu"/>
+        <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
         <classes>
             <class name="dexpokemon.TestPokemonApp">
                 <methods>
-                    <include name="newTest"/>
+                    <include name="SearchPokemonTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TC02 - Test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="attack" value="Absorb"/>
+        <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
+        <classes>
+            <class name="dexpokemon.TestPokemonApp">
+                <methods>
+                    <include name="SearchPokemonAttackTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TC03 - Test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="ability" value="Protean"/>
+        <parameter name="url" value="https://dex.pokemonshowdown.com/"/>
+        <classes>
+            <class name="dexpokemon.TestPokemonApp">
+                <methods>
+                    <include name="SearchPokemonAbilityTest"/>
                 </methods>
             </class>
         </classes>
